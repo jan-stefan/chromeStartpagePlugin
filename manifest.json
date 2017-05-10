@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "Dashboard Extension",
+  "description": "This extension sets a dashboard as a startup page. It allows you to link yoor favourite websites.",
+  "version": "0.1",
+
+  "browser_action": {
+    "default_icon": "resource/images/icon.png",
+    "default_popup": "popup/popup.html",
+    "default_title": "Dashboard"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+
+  "chrome_url_overrides" : {
+    "newtab": "startpage/startpage.html"
+  }
+
+}

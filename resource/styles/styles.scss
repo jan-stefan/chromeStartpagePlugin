@@ -1,0 +1,441 @@
+// color setup
+
+$background-color: #2B333F;
+$element-background-color: #3D4D65;
+$element-top-color: #374355;
+
+$bright-text-color: #FFFFFF;
+$soft-text-color: #8493A8;
+
+$border-color: #53657D;
+
+//fonts
+
+@font-face {
+  font-family: "roboto-regular";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "roboto-bold";
+  src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+//borders
+
+//buttons
+$button-border-radius: 5px;
+
+$button-padding-bottom: 15px;
+$button-padding-top: 15px;
+$button-padding-left: 30px;
+$button-padding-right: 30px;
+
+$button-padding-pressed-top-inner: 12px;
+$button-cursor: pointer;
+$button-pressed-depth: 4px;
+$button-font-family: "roboto-regular";
+$ghost-button-thickness: 2px;
+
+@mixin button-padding {
+  padding-top: $button-padding-top;
+  padding-bottom: $button-padding-bottom;
+  padding-left: $button-padding-left;
+  padding-right: $button-padding-right;
+}
+
+@mixin ghost-button-hover-reset {
+  padding: 0;
+  border: none;
+}
+
+@mixin button($background-color) {
+  display: inline-block;
+  cursor: $button-cursor;
+  user-select: none;
+  font-family: $button-font-family;
+  div {
+    background-color: $background-color;
+    @include button-padding;
+    border-radius: $button-border-radius;
+    color: $bright-text-color;
+  }
+}
+
+@mixin button-hover($background-color) {
+  display: inline-block;
+  border-radius: $button-border-radius;
+  cursor: $button-cursor;
+  user-select: none;
+  font-family: $button-font-family;
+  div {
+    @include button-padding;
+    border-radius: $button-border-radius;
+    background-color: $background-color;
+    color: $bright-text-color;
+  }
+}
+
+@mixin button-active($background-color,$shadow-color,$depth) {
+  display: inline-block;
+  background-color: $shadow-color;
+  border-radius: $button-border-radius;
+  padding-top: $depth;
+  cursor: $button-cursor;
+  user-select: none;
+  font-family: $button-font-family;
+  div {
+    background-color: $background-color;
+    padding-top: $button-padding-top - $depth;
+    padding-bottom: $button-padding-bottom;
+    padding-left: $button-padding-left;
+    padding-right: $button-padding-right;
+  }
+}
+
+@mixin ghost-button($ghost-color) {
+  border: solid $ghost-button-thickness;
+  border-color: $ghost-color;
+  color: $ghost-color;
+  font-family: $button-font-family;
+  display: inline-block;
+  border-radius: $button-border-radius;
+  user-select: none;
+  padding-top: $button-padding-top -$ghost-button-thickness;
+  padding-bottom: $button-padding-bottom -$ghost-button-thickness;
+  padding-left: $button-padding-left -$ghost-button-thickness;
+  padding-right: $button-padding-right -$ghost-button-thickness;
+}
+
+//blue button
+$blue-button-color: #0081D5;
+$blue-button-hover-color: #1E90DA;
+$blue-button-pressed-color: #0072BC;
+$blue-button-shadow-color: #005084;
+
+.button-blue {
+  @include button($blue-button-color);
+}
+
+.button-blue:hover {
+  @include button-hover($blue-button-hover-color);
+}
+
+.button-blue:active {
+  @include button-active($blue-button-pressed-color, $blue-button-shadow-color, $button-pressed-depth);
+}
+
+//green button
+$green-button-color: #03BD5B;
+$green-button-hover-color: #21C56E;
+$green-button-pressed-color: #03A750;
+$green-button-shadow-color: #027538;
+
+.button-green {
+  @include button($green-button-color);
+}
+
+.button-green:hover {
+  @include button-hover($green-button-hover-color);
+}
+
+.button-green:active {
+  @include button-active($green-button-pressed-color, $green-button-shadow-color, $button-pressed-depth);
+}
+
+//lime button
+$lime-button-color: #9DBF15;
+$lime-button-hover-color: #A9C731;
+$lime-button-pressed-color: #8BA913;
+$lime-button-shadow-color: #6A810E;
+
+.button-lime {
+  @include button($lime-button-color);
+}
+
+.button-lime:hover {
+  @include button-hover($lime-button-hover-color);
+}
+
+.button-lime:active {
+  @include button-active($lime-button-pressed-color, $lime-button-shadow-color, $button-pressed-depth);
+}
+
+//orange button
+$orange-button-color: #FF9947;
+$orange-button-hover-color: #FFA55D;
+$orange-button-pressed-color: #E1873F;
+$orange-button-shadow-color: #A7642F;
+
+.button-orange {
+  @include button($orange-button-color);
+}
+
+.button-orange:hover {
+  @include button-hover($orange-button-hover-color);
+}
+
+.button-orange:active {
+  @include button-active($orange-button-pressed-color, $orange-button-shadow-color, $button-pressed-depth);
+}
+
+//red button
+$red-button-color: #D2335B;
+$red-button-hover-color: #D74B6E;
+$red-button-pressed-color: #B92D50;
+$red-button-shadow-color: #822038;
+
+.button-red {
+  @include button($red-button-color);
+}
+
+.button-red:hover {
+  @include button-hover($red-button-hover-color);
+}
+
+.button-red:active {
+  @include button-active($red-button-pressed-color, $red-button-shadow-color, $button-pressed-depth);
+}
+
+//purple button
+$purple-button-color: #A839BA;
+$purple-button-hover-color: #B250C2;
+$purple-button-pressed-color: #9432A4;
+$purple-button-shadow-color: #71267D;
+
+.button-purple {
+  @include button($purple-button-color);
+}
+
+.button-purple:hover {
+  @include button-hover($purple-button-hover-color);
+}
+
+.button-purple:active {
+  @include button-active($purple-button-pressed-color, $purple-button-shadow-color, $button-pressed-depth);
+}
+
+//ghost buttons
+.ghost-button-blue {
+  @include ghost-button($blue-button-color);
+}
+
+.ghost-button-blue:hover {
+  @include ghost-button-hover-reset;
+  @include button-hover($blue-button-hover-color);
+}
+
+.ghost-button-blue:active {
+  @include button-active($blue-button-pressed-color, $blue-button-shadow-color, $button-pressed-depth);
+}
+
+.ghost-button-green {
+  @include ghost-button($green-button-color);
+}
+
+.ghost-button-green:hover {
+  @include ghost-button-hover-reset;
+  @include button-hover($green-button-hover-color);
+}
+
+.ghost-button-green:active {
+  @include button-active($green-button-pressed-color, $green-button-shadow-color, $button-pressed-depth);
+}
+
+.ghost-button-lime {
+  @include ghost-button($lime-button-color);
+}
+
+.ghost-button-lime:hover {
+  @include ghost-button-hover-reset;
+  @include button-hover($lime-button-hover-color);
+}
+
+.ghost-button-lime:active {
+  @include button-active($lime-button-pressed-color, $lime-button-shadow-color, $button-pressed-depth);
+}
+
+.ghost-button-orange {
+  @include ghost-button($orange-button-color);
+}
+
+.ghost-button-orange:hover {
+  @include ghost-button-hover-reset;
+  @include button-hover($orange-button-hover-color);
+}
+
+.ghost-button-orange:active {
+  @include button-active($orange-button-pressed-color, $orange-button-shadow-color, $button-pressed-depth);
+}
+
+.ghost-button-red {
+  @include ghost-button($red-button-color);
+}
+
+.ghost-button-red:hover {
+  @include ghost-button-hover-reset;
+  @include button-hover($red-button-hover-color);
+}
+
+.ghost-button-red:active {
+  @include button-active($red-button-pressed-color, $red-button-shadow-color, $button-pressed-depth);
+}
+
+.ghost-button-purple {
+  @include ghost-button($purple-button-color);
+}
+
+.ghost-button-purple:hover {
+  @include ghost-button-hover-reset;
+  @include button-hover($purple-button-hover-color);
+}
+
+.ghost-button-purple:active {
+  @include button-active($purple-button-pressed-color, $purple-button-shadow-color, $button-pressed-depth);
+}
+
+//icons
+
+@mixin icon($width,$height,$url) {
+  display: block;
+  width: $width;
+  height: $height;
+  background: url($url);
+  background-size: $width $height;
+}
+
+//body rules
+body {
+  background-color: $background-color;
+  margin: 0;
+}
+
+$pane-radius: 5px;
+
+.text-pane {
+  background-color: $element-background-color;
+  border-radius: $pane-radius;
+  margin: 5px;
+  padding: 5px;
+  color: $soft-text-color;
+  font-family: roboto-regular;
+
+  h1 {
+    margin: 0;
+    margin-left: -$pane-radius;
+    margin-right: -$pane-radius;
+    margin-top: -$pane-radius;
+    margin-bottom: $pane-radius;
+    padding: 15px;
+
+    color: $bright-text-color;
+    background-color: $element-top-color;
+    border-top-right-radius: $pane-radius;
+    border-top-left-radius: $pane-radius;
+    border-bottom: solid 1px;
+    border-color: $border-color;
+    font-weight: normal;
+    font-family: roboto-regular;
+
+  }
+}
+
+//test area
+
+$color1: #8393A7;
+$color2: #0081D5;
+$color3: #03BD5B;
+$color4: #9DBF15;
+$color5: #FF9947;
+$color6: #D1335B;
+
+$page-preview-radius: 10px;
+$page-preview-top-height:35px;
+$page-preview-height: 200px;
+$page-preview-element-offset:15px;
+.page-preview {
+  margin: 50px;
+
+  width: 240px;
+  height: $page-preview-height;
+  background-color: $element-background-color;
+  border-radius: $page-preview-radius;
+
+  .top {
+
+    height: $page-preview-top-height;
+    width: 100%;
+    background-color: $color2;
+    border-top-left-radius: $page-preview-radius;
+    border-top-right-radius: $page-preview-radius;
+    border-bottom: solid 2px #374355;
+
+    .fav{
+      float: left;
+      width: 30px;
+      height: $page-preview-top-height;
+      margin-left: 10px;
+
+      img{
+        margin-top: 5px;
+      }
+    }
+
+    .headline{
+
+      float: left;
+
+      font-family: roboto-regular;
+      color: $bright-text-color;
+      height: $page-preview-top-height;
+
+      max-width: 160px;
+      padding-top: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .icon{
+
+      float: right;
+
+      height: 30px;
+      width: 30px;
+
+      margin-right: 3px;
+      margin-top: 3px;
+      background-image: url(../images/close.svg);
+      background-repeat: no-repeat;
+    }
+    .icon:hover{
+      transform: scale(1.15,1.15);
+    }
+  }
+
+  .thumbnail{
+    height: ($page-preview-height - $page-preview-top-height)- $page-preview-element-offset;
+    width: 240px -$page-preview-element-offset;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    overflow: hidden;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
